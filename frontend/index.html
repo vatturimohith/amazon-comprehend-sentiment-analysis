@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Amazon Comprehend - Sentiment Analysis</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Amazon Comprehend</h1>
+        <p>Customer Feedback Sentiment Analysis</p>
+    </header>
+
+    <main class="container">
+
+        <div class="card">
+
+            <h2>Analyze Customer Feedback</h2>
+
+            <p>
+                Enter customer feedback below and Amazon Comprehend
+                will identify its sentiment.
+            </p>
+
+            <textarea
+                id="feedback"
+                placeholder="Enter customer feedback..."
+            >I absolutely love this product. The quality is excellent.</textarea>
+
+            <button id="analyzeBtn" onclick="analyzeSentiment()">
+                Analyze Sentiment
+            </button>
+
+            <p id="loading" class="loading hidden">
+                Analyzing...
+            </p>
+
+            <p id="error" class="error"></p>
+
+            <div id="result" class="result hidden">
+
+                <h2>Analysis Result</h2>
+
+                <p class="sentiment">
+                    Sentiment:
+                    <strong id="sentiment"></strong>
+                </p>
+
+                <div class="score">
+                    <div class="score-label">
+                        <span>Positive</span>
+                        <span id="positiveText">0%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div id="positiveBar"></div>
+                    </div>
+                </div>
+
+                <div class="score">
+                    <div class="score-label">
+                        <span>Negative</span>
+                        <span id="negativeText">0%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div id="negativeBar"></div>
+                    </div>
+                </div>
+
+                <div class="score">
+                    <div class="score-label">
+                        <span>Neutral</span>
+                        <span id="neutralText">0%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div id="neutralBar"></div>
+                    </div>
+                </div>
+
+                <div class="score">
+                    <div class="score-label">
+                        <span>Mixed</span>
+                        <span id="mixedText">0%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div id="mixedBar"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
